@@ -1,5 +1,6 @@
 html {
-    background:  #eee;
+    background: #eee;
+    //background: url('https://i.imgur.com/qFtA9Vq.jpg') repeat 0 0;
 }
 body {
     background: white;
@@ -19,57 +20,60 @@ body {
 
 
 .header {
-    //border-bottom: 2px grey solid;
+    border-top: 1px #ccc solid;
+    width: 100%;
+    height: 5em;
+}
+@media (max-width: 650px) {
 }
 
 .header-main {
     float: left;
-    //display: table;
+    width: 40%;
+    height: 100%;
+
+    display: table;
+}
+
+.header-main > div {
+    display: table-cell;
     text-align: center;
-    //vertical-align: middle;
-    // margin: 10px 0;
+    vertical-align: middle;
+}
+
+.header-main > div > span {
     font-weight: 700;
-    padding: 20px;
-}
-
-.header-main > span {
-    // display: table-cell;
-    // text-align: center;
-    // vertical-align: middle;
-}
-
-@media (max-width: 650px) {
-    .header-main {
-        width: 100%;
-        float: none;
-        padding: 5px;
-    }
 }
 
 .header-items {
-    padding-right: 10px;
-    //border-top: 2px grey solid;
-    //border-bottom: 1px grey solid;
+    float: left;
+    width: 60%;
+    height: 100%;
 }
 
 .header-item {
+    display: table;
     float: left;
+
+    width: 25%;
+    height: 100%;
+
     text-decoration: none;
     color: inherit;
-    min-width: 5em;
     overflow: hidden;
 }
 
 .header-item > div {
-    border-top: 1px #ccc solid;
-    border-left: 10px #ccc solid;
-    width: 100%;
+    display: table-cell;
+    text-align: center;
     vertical-align: middle;
-    padding: 20px;
+
+    border-bottom: 10px grey solid;
+    width: 100%;
 }
 
 .header-item.active-item > div {
-    border-left: 10px #333 solid;
+    border-bottom: 10px #333 solid;
     background: #ffffe6;
 }
 
@@ -78,39 +82,49 @@ body {
 }
 
 @media (max-width: 650px) {
+    .header {
+        height: auto;
+    }
+    .header-main {
+        width: 100%;
+        padding: 20px 0;
+        float: none;
+    }
     .header-items {
+        width: 100%;
+        float: none;
     }
     .header-item {
         float: left;
-        width: 50%;
-        padding-right: 0px;
+        width: 40%;
+        padding: 0 5%;
+        margin-bottom: 20px;
     }
     .header-item > div{
-        border-left: 10px #eee solid;
-        padding: 10px;
+        //border-left: 10px #eee solid;
+        //padding: 10px;
     }
 }
 
-.text {
+
+.pretty-text {
     padding: 10px;
     margin: 10px;
-    background: url('/static/images/KanjiBackground.gif') repeat 0 0; 
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
-}
-
-.white-background {
-    background: white;
-}
-
-.grey-background {
-    background: url('https://i.imgur.com/qFtA9Vq.jpg') repeat 0 0;
+    line-height: 1.5;
 }
 
 .pretty-image {
-    height: 15em;
+    float: left;
+    height: 20em;
     margin: 10px;
     overflow: hidden;
 }
+
+.pretty-image.small {
+    height: 10em;
+    max-width: 50%;
+}
+
 @media (max-width: 650px) {
     .pretty-image {
         height: 10em;
@@ -129,98 +143,4 @@ body {
     position: relative;
     right: -50%;
     max-height: 100%;
-}
-
-.menu-col {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
-    width: 30%;
-    float: left;
-}
-@media (max-width: 650px) {
-    .menu-col {
-        width: 100%;
-        padding-bottom: 20px;
-    }
-}
-
-.image-col {
-    width: 70%;
-    float: left;
-}
-@media (max-width: 650px) {
-    .image-col {
-        width: 100%;
-    }
-}
-
-.menu-items {
-    padding-right: 10px;
-    border-top: 2px grey solid;
-    border-bottom: 1px grey solid;
-}
-
-.menu-item {
-    text-decoration: none;
-    color: inherit;
-}
-
-.menu-item > div {
-    border-top: 1px #ccc solid;
-    border-left: 10px #ccc solid;
-    width: 100%;
-    text-align: center;
-    vertical-align: middle;
-    padding: 20px 0;
-}
-
-.menu-item.active-item > div {
-    border-left: 10px #333 solid;
-    background: #ffffe6;
-}
-
-.menu-item.active-item > div > span {
-    font-weight: 700;
-}
-
-@media (max-width: 650px) {
-    .menu-items {
-        padding: 0, -15px; 
-    }
-    .menu-item {
-        padding: 0, 15px;
-        float: left;
-        width: 50%;
-    }
-    .menu-item > div{
-        border-left: 10px #eee solid;
-        padding: 10px 0;
-    }
-
-}
-
-.logo-holder {
-    display: table;
-    text-align: center;
-    vertical-align: middle;
-    margin: 10px 0;
-}
-
-.logo-holder > h2 {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.logo-holder > img {
-    width: 100px;
-    float: left;
-}
-
-.header-text {
-    font-family: Candara;
-    font-weight: 700;
-}
-
-ul.big-list > li {
-    margin-bottom: 1em;
 }
